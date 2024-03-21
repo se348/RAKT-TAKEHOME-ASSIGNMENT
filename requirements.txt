@@ -1,0 +1,7 @@
+django
+psycopg2
+django-environ
+djangorestframework
+pandas==2.2.1
+numpy
+GDAL

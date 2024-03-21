@@ -1,0 +1,33 @@
+[
+  {
+    "locationid": 1728067,
+    "applicant": "Leo's Hot Dogs",
+    "facility_type": "Push Cart",
+    "cnn": 9121000,
+    "location_description": "MISSION ST: 19TH ST to 20TH ST (2300 - 2399)",
+    "address": "2301 MISSION ST",
+    "blocklot": 3595031,
+    "block": 3595,
+    "lot": "031",
+    "permit": "23MFF-00008",
+    "status": "APPROVED",
+    "food_items": "Hot dogs and related toppings: non alcoholic beverages",
+    "x": 6007018.02,
+    "y": 2104913.057,
+    "latitude": 37.76008693198698,
+    "longitude": -122.41880648110114,
+    "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=23MFF-00008&ExportPDF=1&Filename=23MFF-00008_schedule.pdf",
+    "dayshours": "",
+    "noisent": "",
+    "approved": "09/20/2023 12:00:00 AM",
+    "received": 20230920,
+    "prior_permit": 1,
+    "expiration_date": "11/15/2024 12:00:00 AM",
+    "location_points": "(37.76008693198698, -122.41880648110114)",
+    "fire_prevention_districts": 2,
+    "police_districts": 4,
+    "supervisor_districts": 7,
+    "zip_codes": 28859,
+    "neighborhoods_old": 19
+  }
+  ]
