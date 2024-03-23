@@ -87,4 +87,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # init_mongo()
-mongoengine.connect(db="food_truck", host="localhost", port=27017)
+mongoengine.connect(db="food_truck", host="mongodb+srv://semir2578:BZKugTTvC43kZDtW@version1.4nm8pf8.mongodb.net")
+

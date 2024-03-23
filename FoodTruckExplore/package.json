@@ -1,0 +1,18 @@
+{
+  "name": "foodtruckexplore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss FoodTruckSF/static/css/styles.css -o FoodTruckSF/static/css/output.css",
+    "watch": "postcss FoodTruckSF/static/css/styles.css -o FoodTruckSF/static/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  }
+}

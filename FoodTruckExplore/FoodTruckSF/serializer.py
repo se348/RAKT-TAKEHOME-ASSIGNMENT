@@ -1,6 +1,4 @@
-# Define a serializer for your FoodTruck model as needed
 from rest_framework import serializers
-
 
 class FoodTruckSerializer(serializers.Serializer):
     _id = serializers.IntegerField()
@@ -16,4 +14,11 @@ class FoodTruckSerializer(serializers.Serializer):
     expiration_date = serializers.DateTimeField()
     distance = serializers.FloatField(required=False)
 
-
+    def to_representation(self, instance):
+        """Modify the representation of the serializer to expose 'id' without underscore."""
+        ret = super().to_representation(instance)  # Get the original representation
+        ret['id'] = ret.pop('_id', None)  # Rename '_id' to 'id'
+        dist = ret.pop("distance", None)
+        if dist:
+            ret["distance"] = round(dist / 1000, 2)
+        return ret

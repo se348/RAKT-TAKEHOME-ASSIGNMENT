@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Food Trucks</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.x/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{% static 'js/detailtruck.js' %}"> </script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ food_truck.applicant }}</h1>
+        <!-- Food truck details -->
+        <div class="bg-white p-5 rounded-lg shadow mb-6">
+            <p><strong>Address:</strong> {{ food_truck.address }}</p>
+            <p><strong>Food Items:</strong> {{ food_truck.food_items }}</p>
+            <p><strong>Status:</strong> {{ food_truck.status }}</p>
+            <P><strong>Shedule:</strong> <a class="text-blue-700 hover:underline"
+                    href="{{food_truck.schedule}}">Link</a>
+            </P>
+        </div>
+
+        <div class="w-full h-[200px] md:h-[400px] grid grid-cols-5 grid-rows-4 gap-1 my-10"><img
+                src="{% static 'images/food3.jpg' %}" alt=""
+                class="col-span-3 row-span-4 w-full h-full rounded-l-xl"><img src="{% static 'images/food1.jpg' %}"
+                alt="" class="col-span-2 row-span-2 w-full h-full rounded-tr-xl"><img
+                src="{% static 'images/food2.jpg' %}" alt="" class="col-span-2 row-span-2 w-full h-full  rounded-br-xl">
+        </div>
+        <!-- Map container -->
+        <div id="map" class="h-64 w-full rounded-lg shadow-md"></div>
+    </div>
+    <!-- Initialize the map with dynamic data -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeMap(
+                {{ food_truck.latitude }},
+            {{ food_truck.longitude }},
+            "{{ food_truck.applicant|escapejs }}",
+            "{{ food_truck.address|escapejs }}"
+        );
+    });
+    </script>
+</body>
+
+</html>
+
+</html>

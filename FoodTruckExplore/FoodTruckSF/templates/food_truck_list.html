@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Food Trucks</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <script src="{% static 'js/foodTrucks.js' %}"> </script>
+</head>
+
+<body>
+    <div class="relative-full h-screen bg-cover bg-center"
+        style="background-image: url('{% static 'images/image.jpg' %}');">
+        <section class="h-full">
+            <div class="flex items-center justify-center h-full w-full ">
+                <div class="text-center">
+                    <h1 class="text-white text-6xl font-bold">Food Truck Locator</h1>
+                    <!-- Button to find nearby food trucks -->
+                    <button id="findNearbyTrucks" class="text-white text-xl font-bold mt-4 py-2 px-4 rounded underline">
+                        Find Nearby Food Trucks
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Placeholder for showing latitude and longitude -->
+    <p id="locationInfo" class="text-center my-4"></p>
+
+    <div class="container mx-auto my-10">
+        <h2 id="food-trucks" class="text-3xl font-bold">Food Trucks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for truck in results.data %}
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-lg font-medium">{{ truck.applicant }}</h2>
+                    <p class="text-sm text-gray-500">{{ truck.id_no_underscore }}</p>
+                    <a href="/food-trucks/{{ truck.id}}"
+                        class="bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded">View</a>
+                </div>
+                <p>{{ truck.address }}</p>
+                <p class="text-gray-500 mt-2 font-light">{{truck.status}}</p>
+                {% if truck.distance %}
+                <p>{{ truck.distance }} km</p>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
