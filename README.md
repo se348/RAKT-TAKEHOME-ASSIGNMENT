@@ -4,7 +4,7 @@
 This is a platform that helps individuals at a specific location looks for food trucks nearby. There are 3 ways to get to access n nearest food trucks. It has been tested with food trucks in San Francisco, US.
 
 ## Installation
-The firsrt step is to clone the git repository
+The first step is to clone the git repository
 ```
 git clone https://github.com/se348/RAKT-TAKEHOME-ASSIGNMENT.git
 ```

@@ -1,8 +1,9 @@
 django
-# psycopg2
+psycopg2
 djangorestframework
 pandas
 mongoengine
 pytest
 pytest-django
 mongomock
+python-dotenv

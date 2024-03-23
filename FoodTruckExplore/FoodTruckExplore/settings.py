@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import mongoengine
+import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
+
+# Use environment variables
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,6 +93,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# init_mongo()
-mongoengine.connect(db="food_truck", host="mongodb+srv://semir2578:BZKugTTvC43kZDtW@version1.4nm8pf8.mongodb.net")
 
+db_name = os.getenv('DB_NAME', 'food_trucks') 
+db_host = os.getenv('DB_HOST', 'localhost')
+db_port = int(os.getenv('DB_PORT', 27017)) 
+
+mongoengine.connect(db=db_name, host=db_host, port=db_port)
